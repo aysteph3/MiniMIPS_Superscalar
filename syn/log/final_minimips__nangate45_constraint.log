@@ -1,0 +1,38 @@
+ 
+****************************************
+Report : constraint
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Mar  8 20:39:43 2021
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    clock                        1.20      1.00      1.20
+    clock2                       1.19      1.00      1.19
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  2.39
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    clock                      126.37        13     12.51
+    clock2                     123.71         1      1.19
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                  13.70
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    max_transition                                   6.49 (VIOLATED)
+    max_capacitance                               5405.93 (VIOLATED)
+    max_delay/setup                                  2.39 (VIOLATED)
+    sequential_clock_pulse_width                     0.00 (MET)
+    critical_range                                  13.70 (VIOLATED)
+
+
+1

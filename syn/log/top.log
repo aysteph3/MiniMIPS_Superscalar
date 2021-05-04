@@ -1,0 +1,1355 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version N-2017.09-SP3 for linux64 - Jan 18, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+
+ ┌────────────────────────────────────────────────────────────────────────────┐ 
+ │                                                                            │ 
+ │               Provided by EUROPRACTICE DESIGN TOOLS service.               │ 
+ │                             (2017/18 Release)                              │ 
+ │                                                                            │ 
+ │ For details of additional EDA design tools, design flows, training         │ 
+ │ technical support please contact the Microelectronics Support Centre.      │ 
+ │                                                                            │ 
+ │                      Microelectronics Support Centre                       │ 
+ │                 Science and Technology Facilities Council                  │ 
+ │                       Rutherford Appleton Laboratory                       │ 
+ │                               Harwell Oxford                               │ 
+ │                                Oxfordshire                                 │ 
+ │                                 OX11 0QX                                   │ 
+ │                               United Kingdom                               │ 
+ │                                                                            │ 
+ │                              +44 1235 445327                               │ 
+ │                     MicroelectronicsCentre@stfc.ac.uk                      │ 
+ │                        wwww.europractice.stfc.ac.uk                        │ 
+ │                                                                            │ 
+ └────────────────────────────────────────────────────────────────────────────┘ 
+
+Initializing gui preferences from file  /home/stephen/.synopsys_dv_prefs.tcl
+set TOPLEVEL "minimips"
+minimips
+set simType ""
+#set TECH "LIB065"
+set TECH "nangate45"
+nangate45
+# set TECH "nangate15"
+# set_host_options -max_cores 8
+set CLK "clock"
+clock
+set CLK2 "clock2"
+clock2
+set RST "reset"
+reset
+# 200 MHz
+set CLK_PERIOD 5
+5
+# Push hard
+set MAX_AREA 0
+0
+# yes, no
+set DO_UNGROUP "no"
+no
+set DO_VERIFY "no"
+no
+# 100 ps
+set CLK_UNCERTAINTY 0.1
+0.1
+# Clk to Q in technology time units
+set DFF_CKQ 0.2
+0.2
+# Setup time in technology time units
+set DFF_SETUP 0.1
+0.1
+# Starting timestamp
+sh date
+Mon Mar  8 20:37:36 EET 2021
+###################################################
+#  Set some basic variables related to environment
+###################################################
+# Enable Verilog HDL preprocessor */
+set hdlin_enable_vpp true
+Information: Variable 'hdlin_enable_vpp' is obsolete and is being ignored. (INFO-100)
+true
+# Set log path
+set LOG_PATH "../log/"
+../log/
+# Set gate-level netlist path
+set GATE_PATH "../out/"
+../out/
+# Set RAMS_PATH
+set RAMS_PATH "../lib/"
+../lib/
+# Set RTL source path
+set RTL_PATH "../src/"
+../src/
+set CLS_RTL_PATH "../../../ ../../../rtl/verilog/cls_config/"
+../../../ ../../../rtl/verilog/cls_config/
+# Optimize adders
+set synlib_model_map_effort high
+high
+set hlo_share_effort low
+Information: Variable 'hlo_share_effort' is obsolete and is being ignored. (INFO-100)
+low
+set STAGE final
+final
+###################################################
+# Load libraries
+###################################################
+# /* Search paths */
+set search_path [list . ../lib/ [getenv "SYNOPSYS"]]
+. ../lib/ /eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3
+# /* Synthetic libraries */
+set synthetic_library dw_foundation.sldb
+dw_foundation.sldb
+#comment out if SYNOPSYS_UNCONNECTED_ not removed
+set verilogout_show_unconnected_pins   "FALSE"
+FALSE
+if { $TECH == "nangate45" } {
+	set target_library NangateOpenCellLibrary.db
+	set_dont_use "NangateOpenCellLibrary/SDFFRS_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFRS_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFFR_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFR_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFFS_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFS_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFF_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFF_X2"
+# 	set_dont_use "NangateOpenCellLibrary/MUX2_X1"
+# 	set_dont_use "NangateOpenCellLibrary/MUX2_X2"
+
+} elseif { $TECH == "nangate45Old" } {
+	set target_library NangateOpenCellLibrary.db
+	set_dont_use "NangateOpenCellLibrary/SDFFRS_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFRS_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFFR_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFR_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFFS_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFFS_X2"
+	set_dont_use "NangateOpenCellLibrary/SDFF_X1"
+	set_dont_use "NangateOpenCellLibrary/SDFF_X2"
+# 	set_dont_use "NangateOpenCellLibrary/MUX2_X1"
+# 	set_dont_use "NangateOpenCellLibrary/MUX2_X2"
+
+} elseif { $TECH == "LIB065" } {
+	set target_library CORE65GPSVT_nom_1.10V_25C.db
+} elseif { $TECH == "nangate15" } {
+	set target_library NanGate_15nm_OCL.db
+	set_dont_use "NanGate_15nm_OCL/SDFFRNQ_X1"
+	set_dont_use "NanGate_15nm_OCL/SDFFSNQ_X1"
+# 	set_dont_use "NanGate_15nm_OCL/MUX2_X1"
+# 	set_dont_use "NanGate_15nm_OCL/MUX2_X2"
+
+}
+Loading db file '/home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/lib/NangateOpenCellLibrary.db'
+Information: Using CCS timing libraries. (TIM-024)
+1
+set link_library [list $target_library $synthetic_library]
+NangateOpenCellLibrary.db dw_foundation.sldb
+###################################################
+#  * Load HDL source files
+###################################################
+source ../bin/read_design.inc > "${LOG_PATH}read_design_${TOPLEVEL}_${simType}${TECH}.log"
+elaborate $TOPLEVEL > "${LOG_PATH}elaborate_${TOPLEVEL}_${simType}${TECH}.log"
+# /* Set design top */
+current_design $TOPLEVEL
+Current design is 'minimips'.
+{minimips}
+set power_reserve_rtl_hier_names true
+true
+# /* Link all blocks and uniquify them */
+link
+
+  Linking design 'minimips'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  NangateOpenCellLibrary (library) /home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/lib/NangateOpenCellLibrary.db
+  dw_foundation.sldb (library) /eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/dw_foundation.sldb
+
+1
+uniquify
+1
+check_design > "${LOG_PATH}check_design_${TOPLEVEL}_${simType}${TECH}.log"
+# /*
+#  * Apply constraints
+#  *
+#  */
+if { $TECH == "nangate45" } {
+ 	set DFF_CELL DFF_X2
+ 	set LIB_DFF_D NangateOpenCellLibrary/DFF_X2/D
+	set OPER_COND typical
+} elseif { $TECH == "nangate45Old" } {
+ 	set DFF_CELL DFF_X2
+ 	set LIB_DFF_D NangateOpenCellLibrary/DFF_X2/D
+	set OPER_COND typical
+} elseif { $TECH == "LIB065" } {
+	set OPER_COND nom_1.10V_25C
+	set LIB_DFF_D CORE65GPSVT/HS65_GS_DFPHQNX4/D
+	set DFF_CELL HS65_GS_DFPHQNX4
+} elseif { $TECH == "nangate15" } {
+ 	set DFF_CELL DFFRNQ_X1
+ 	set LIB_DFF_D NanGate_15nm_OCL/DFFRNQ_X1/D
+	set OPER_COND typical
+} else {
+	echo "Error: Unsupported technology"
+}
+typical
+# /* Clocks constraints */
+#create_clock clock -period $CLK_PERIOD
+#create_clock clock2 -period $CLK_PERIOD
+create_clock $CLK -period $CLK_PERIOD
+1
+create_clock $CLK2 -period $CLK_PERIOD
+1
+set_clock_uncertainty $CLK_UNCERTAINTY [all_clocks]
+1
+set_dont_touch_network [all_clocks]
+1
+#remove_unconnected_ports -blast_buses [get_cells -hier *]
+#remove_unconnected_ports
+set_false_path -from clock1 -to clock2
+Warning: Can't find object 'clock1' in design 'minimips'. (UID-95)
+Error: Value for list '-from' must have 1 elements. (CMD-036)
+0
+report_clocks
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating graph... (UID-83)
+Warning: Design 'minimips' contains 16 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : clocks
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Mar  8 20:37:43 2021
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clock            5.00   {0 2.5}             d         {clock}
+clock2           5.00   {0 2.5}             d         {clock2}
+--------------------------------------------------------------------------------
+1
+# /* Reset constraints */
+set_driving_cell -none $RST
+Warning: '-none' option is obsoleted. Although it will still function normally now, please use 'remove_driving_cell' command to replace this option in the future.  (UID-437)
+1
+set_drive 0 $RST
+1
+set_dont_touch_network $RST
+1
+# /* All inputs except reset and clock */
+set all_inputs_wo_rst_clk [remove_from_collection [all_inputs] [list $CLK $RST]]
+{clock2 ram_data[31] ram_data[30] ram_data[29] ram_data[28] ram_data[27] ram_data[26] ram_data[25] ram_data[24] ram_data[23] ram_data[22] ram_data[21] ram_data[20] ram_data[19] ram_data[18] ram_data[17] ram_data[16] ram_data[15] ram_data[14] ram_data[13] ram_data[12] ram_data[11] ram_data[10] ram_data[9] ram_data[8] ram_data[7] ram_data[6] ram_data[5] ram_data[4] ram_data[3] ram_data[2] ram_data[1] ram_data[0] ram_ack ram_data2[31] ram_data2[30] ram_data2[29] ram_data2[28] ram_data2[27] ram_data2[26] ram_data2[25] ram_data2[24] ram_data2[23] ram_data2[22] ram_data2[21] ram_data2[20] ram_data2[19] ram_data2[18] ram_data2[17] ram_data2[16] ram_data2[15] ram_data2[14] ram_data2[13] ram_data2[12] ram_data2[11] ram_data2[10] ram_data2[9] ram_data2[8] ram_data2[7] ram_data2[6] ram_data2[5] ram_data2[4] ram_data2[3] ram_data2[2] ram_data2[1] ram_data2[0] ram_ack2 it_mat}
+# /* Set output delays and load for output signals
+#  *
+#  * All outputs are assumed to go directly into
+#  * external flip-flops for the purpose of this
+#  * synthesis
+#  */
+set_output_delay $DFF_SETUP -clock $CLK [all_outputs]
+1
+set_load [expr [load_of $LIB_DFF_D] * 4] [all_outputs]
+1
+# /* Input delay and driving cell of all inputs
+#  *
+#  * All these signals are assumed to come directly from
+#  * flip-flops for the purpose of this synthesis
+#  *
+#  */
+set_input_delay $DFF_CKQ -clock $CLK $all_inputs_wo_rst_clk
+1
+set_driving_cell -lib_cell $DFF_CELL -pin QN $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+# /* Set design fanout */
+# /*
+# set_max_fanout 10 $TOPLEVEL
+# */
+# /* Optimize all near-critical paths to give extra slack for layout */
+set c_range [expr $CLK_PERIOD * 0.10]
+0.5
+group_path -critical_range $c_range -name $CLK -to $CLK
+1
+# /* Operating conditions */
+set_operating_conditions $OPER_COND
+Using operating conditions 'typical' found in library 'NangateOpenCellLibrary'.
+1
+# /* Lets do basic synthesis */
+if { $DO_UNGROUP == "yes" } {
+	ungroup -all -unflatten
+}
+# /*
+# set_structure -boolean false -timing true
+# set_flatten -effort medium -minimize single_output
+# */
+# /*
+# set_flatten false
+# */
+# /*
+#  compile -boundary_optimization -map_effort medium -ungroup_all
+# */
+#  compile -boundary_optimization -map_effort high -auto_ungroup
+# compile -area_effort none -map_effort high
+# /*
+# compile -map_effort low
+# */
+# New PART START
+# set automatic removal of constants flip-flop
+# set compile_seqmap_propagate_constants true
+# set automatic removal of unloaded flip-flop
+# set compile_delete_unloaded_sequential_cells false
+# set hdlin_ff_always_sync_set_reset "true"
+# compile_ultra -no_autoungroup -no_seq_output_inversion
+# compile -area_effort none -exact_map -power_effort none
+# New PART END
+#compile_ultra -no_autoungroup
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | N-2017.09-DWBB_201709.3 |     *     |
+| Licensed DW Building Blocks        | N-2017.09-DWBB_201709.3 |     *     |
+============================================================================
+
+
+Information: There are 362 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'delay_gate'
+  Processing 'bus_ctrl02'
+  Processing 'alu2'
+Information: Added key list 'DesignWare' to design 'alu2'. (DDB-72)
+  Processing 'pps_ex_2'
+  Processing 'pps_di_2'
+Information: The register 'DI_exc_cause_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'pps_ei_2'
+  Processing 'bus_ctrl01'
+  Processing 'syscop'
+  Processing 'banc'
+  Processing 'renvoi'
+Information: Added key list 'DesignWare' to design 'renvoi'. (DDB-72)
+  Processing 'pps_mem'
+  Processing 'alu'
+Information: Added key list 'DesignWare' to design 'alu'. (DDB-72)
+  Processing 'pps_ex'
+  Processing 'pps_di'
+Information: The register 'DI_exc_cause_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_exc_cause_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'DI_level_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'pps_ei'
+  Processing 'pps_pf'
+  Processing 'minimips'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'pps_ex_2_DW01_add_0'
+  Processing 'pps_ex_2_DW01_add_1'
+  Processing 'pps_ex_2_DW01_add_2'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_leftsh'
+  Processing 'alu2_DW01_add_0'
+  Mapping 'syscop_DW_cmp_0'
+  Mapping 'syscop_DW_cmp_1'
+  Mapping 'syscop_DW_cmp_2'
+  Mapping 'syscop_DW_cmp_3'
+  Mapping 'syscop_DW_cmp_5'
+  Mapping 'syscop_DW_cmp_7'
+  Mapping 'syscop_DW_cmp_9'
+  Mapping 'syscop_DW_cmp_11'
+  Processing 'pps_ex_DW01_add_0'
+  Processing 'pps_ex_DW01_add_1'
+  Processing 'pps_ex_DW01_add_2'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_rightsh'
+  Mapping 'DW_leftsh'
+  Processing 'alu_DW01_add_0'
+  Processing 'pps_pf_DW01_add_0'
+  Processing 'pps_pf_DW01_add_1'
+  Processing 'pps_pf_DW01_add_2'
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+  Mapping 'alu2_DW_mult_tc_0'
+  Mapping 'alu2_DW_mult_uns_0'
+  Mapping 'alu_DW_mult_tc_0'
+  Mapping 'alu_DW_mult_uns_0'
+  Mapping 'alu2_DW_mult_tc_1'
+  Mapping 'alu_DW_mult_tc_1'
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'syscop'. (DDB-72)
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:23   56150.5      4.14    2493.7   45912.9                          
+    0:00:23   56150.5      4.14    2493.7   45912.9                          
+    0:00:24   56403.7      4.14    2493.6   41903.6                          
+    0:00:25   56645.2      2.81    1988.6   36108.7                          
+    0:00:26   57726.0      2.79    1902.3   23480.3                          
+    0:00:37   58999.3      1.84     844.3   14332.9                          
+    0:00:38   59149.6      2.54     859.1   14723.3                          
+    0:00:38   59149.6      2.54     859.1   14723.3                          
+    0:00:38   59141.4      2.54     857.4   14719.7                          
+    0:00:38   59141.4      2.54     857.4   14719.7                          
+    0:00:46   47656.6      1.87     291.5    6052.1                          
+    0:00:47   47623.3      1.85     290.2    6052.1                          
+    0:00:49   47623.0      1.85     290.0    6052.1                          
+    0:00:49   47623.0      1.85     290.0    6052.1                          
+    0:00:49   47623.0      1.85     290.0    6052.1                          
+    0:00:50   47623.0      1.85     290.0    6052.1                          
+    0:00:50   47623.0      1.85     290.0    6052.1                          
+    0:00:50   47629.7      1.85     290.0    5771.2                          
+    0:00:50   47634.7      1.85     290.0    5651.1                          
+    0:00:50   47637.4      1.85     290.0    5604.3                          
+    0:00:50   47640.1      1.85     290.0    5557.4                          
+    0:00:50   47640.9      1.85     290.0    5537.0                          
+    0:00:50   47641.7      1.85     290.0    5516.7                          
+    0:00:50   47641.7      1.85     290.0    5516.7                          
+    0:00:50   47641.7      1.85     290.0    5516.7                          
+    0:00:50   47641.7      1.85     290.0    5516.7                          
+    0:00:50   47648.3      1.84     289.5    5516.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:51   47652.0      1.83     289.3    5516.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:51   47655.8      1.83     289.0    5522.9 U4_ex/U1_alu/hilo_reg[62]/D
+    0:00:51   47655.8      1.83     288.8    5529.1 U4_ex/EX_data_hilo_reg[62]/D
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:51   47655.8      1.83     288.8    5529.1                          
+    0:00:51   47665.9      1.83     288.3    5529.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:52   47699.9      1.80     287.2    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:52   47723.6      1.80     286.7    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:52   47738.2      1.79     286.1    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:52   47752.6      1.78     285.7    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:52   47768.8      1.78     285.5    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:52   47781.3      1.77     285.0    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47805.3      1.76     284.5    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47821.5      1.76     284.0    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47833.7      1.75     283.9    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47844.6      1.75     283.7    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47855.5      1.75     283.5    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47867.2      1.75     283.4    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47887.4      1.75     283.3    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47900.5      1.75     283.0    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:53   47913.0      1.74     282.7    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:54   47917.8      1.74     282.7    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:54   47946.2      1.73     281.9    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:54   47960.6      1.73     281.7    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:54   47981.1      1.71     280.9    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:54   47981.9      1.71     280.8    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:55   47986.9      1.71     280.6    5601.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:55   47991.7      1.71     280.4    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48013.5      1.71     280.2    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48026.3      1.70     280.1    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48041.5      1.70     279.9    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48046.0      1.70     279.6    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48049.7      1.70     279.5    5601.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48056.6      1.70     279.4    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48067.0      1.69     279.2    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:55   48069.9      1.69     279.1    5622.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:56   48073.6      1.66     278.8    5622.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:00:56   48093.6      1.66     278.4    5622.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:56   48093.9      1.66     278.3    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:56   48111.2      1.66     277.6    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:56   48111.2      1.66     277.5    5622.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48119.7      1.65     277.1    5622.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48119.1      1.64     276.7    5622.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48128.2      1.63     276.3    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:57   48134.8      1.63     276.1    5622.0 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:57   48148.4      1.63     275.8    5628.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48159.8      1.62     275.6    5628.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48173.7      1.62     275.6    5651.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:57   48178.5      1.61     275.5    5651.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:58   48191.8      1.61     275.1    5657.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:58   48204.5      1.61     274.9    5657.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:58   48211.4      1.60     274.8    5657.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:58   48226.6      1.59     273.9    5657.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:58   48231.7      1.59     273.6    5657.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:59   48243.6      1.59     273.5    5665.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:59   48258.8      1.58     273.4    5698.5 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:59   48270.2      1.58     273.4    5698.5 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:59   48279.5      1.58     273.3    5737.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:59   48280.3      1.58     273.3    5737.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:00:59   48284.1      1.58     273.2    5737.8 U4_ex/U1_alu/hilo_reg[63]/D
+    0:00:59   48292.3      1.57     272.9    5737.8 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:00   48293.1      1.57     272.8    5737.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:00   48301.3      1.57     272.6    5700.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:00   48307.2      1.57     272.5    5700.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:00   48337.8      1.57     272.3    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:00   48344.7      1.56     272.2    5700.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:00   48349.0      1.56     272.0    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:00   48365.4      1.56     271.9    5700.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:00   48366.2      1.56     271.8    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:00   48370.5      1.55     271.6    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:01   48386.5      1.55     271.6    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:01   48390.5      1.55     271.5    5700.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:01   48388.1      1.55     271.3    5700.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:01   48391.3      1.55     271.1    5700.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:01   48396.0      1.55     271.1    5700.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:01   48399.8      1.54     270.8    5700.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:01   48411.5      1.54     270.6    5700.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:02   48419.2      1.53     270.2    5700.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:02   48418.4      1.53     270.0    5700.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:02   48423.7      1.53     269.9    5700.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:02   48433.0      1.52     269.5    5700.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:02   48447.9      1.52     269.4    5733.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:02   48452.7      1.52     269.3    5733.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:02   48453.5      1.52     269.3    5733.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:03   48457.5      1.51     269.2    5733.3 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48461.2      1.51     269.1    5733.3 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48465.2      1.51     269.1    5733.3 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48479.8      1.51     269.0    5741.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48503.5      1.51     268.9    5774.2 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48518.4      1.50     268.6    5794.5 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48529.0      1.50     268.6    5794.5 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:03   48540.5      1.50     268.5    5794.5 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:04   48545.3      1.50     268.5    5794.5 U4_ex/EX_data_hilo_reg[63]/D
+    0:01:04   48563.1      1.50     268.2    5794.5 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:04   48566.3      1.49     268.0    5826.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:04   48582.2      1.49     267.9    5826.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:04   48585.2      1.49     267.7    5826.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:05   48586.8      1.49     267.6    5826.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:05   48586.5      1.49     267.6    5826.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:05   48602.7      1.49     267.5    5859.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:05   48607.5      1.49     267.5    5859.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:06   48607.2      1.49     267.4    5859.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:06   48608.3      1.49     267.4    5859.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:06   48624.8      1.49     267.3    5892.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:06   48624.8      1.49     267.2    5892.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:06   48629.6      1.48     266.9    5892.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48634.4      1.47     266.6    5892.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48637.3      1.47     266.4    5892.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48651.1      1.46     266.2    5917.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48656.7      1.46     265.8    5917.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48662.8      1.45     265.6    5917.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48668.7      1.45     265.4    5917.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:07   48673.5      1.45     265.3    5917.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:07   48685.4      1.44     265.0    5950.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:08   48688.6      1.44     264.9    5950.3 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:08   48711.2      1.43     264.7    6016.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:08   48724.3      1.43     264.6    6049.5 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:08   48732.8      1.42     264.5    6049.5 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:08   48738.9      1.42     264.3    6049.5 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:09   48743.2      1.41     264.0    6057.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:09   48743.7      1.41     263.8    6024.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:09   48749.3      1.41     263.7    6024.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:09   48753.8      1.41     263.5    6024.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:09   48755.7      1.40     263.4    6024.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:09   48759.4      1.40     263.2    6024.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:09   48766.3      1.40     263.0    6024.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:09   48780.1      1.40     262.9    6057.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:10   48781.5      1.39     263.0    6057.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:10   48783.6      1.39     262.9    6057.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:10   48791.3      1.39     262.8    6057.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:10   48795.8      1.38     262.6    6057.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:10   48816.3      1.38     262.6    6057.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:11   48820.3      1.38     262.5    6057.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:11   48822.2      1.38     262.5    6057.6 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:11   48825.4      1.38     262.4    6057.6 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:11   48826.2      1.37     262.2    6057.6 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:11   48826.2      1.37     262.2    6057.6 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:11   48831.5      1.37     262.0    6057.6 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:11   48844.5      1.36     261.8    6090.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:11   48854.4      1.36     261.7    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:12   48856.8      1.36     261.7    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:12   48861.0      1.36     261.6    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:12   48862.6      1.36     261.5    6123.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:12   48870.6      1.35     261.3    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:12   48873.0      1.35     261.3    6123.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:12   48873.5      1.35     261.1    6123.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:12   48877.2      1.35     261.1    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:13   48877.2      1.34     261.0    6123.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:13   48882.8      1.34     260.7    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:13   48888.4      1.34     260.6    6123.7 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:13   48887.9      1.34     260.6    6123.7 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:13   48900.1      1.34     260.5    6156.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:13   48902.8      1.33     260.5    6156.8 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:14   48903.3      1.33     260.4    6156.8 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:14   48907.8      1.33     260.3    6156.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:14   48910.0      1.33     260.3    6156.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:14   48921.1      1.33     260.2    6189.8 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:14   48924.6      1.33     260.2    6189.8 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:14   48929.4      1.33     260.1    6189.8 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:14   48931.0      1.33     260.1    6189.8 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:14   48923.8      1.33     260.0    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:14   48925.9      1.33     260.0    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:14   48928.8      1.33     259.9    6182.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:15   48932.0      1.33     259.9    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:15   48935.2      1.32     259.8    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:15   48936.3      1.32     259.8    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:15   48939.2      1.32     259.6    6182.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:15   48941.6      1.32     259.5    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:15   48943.5      1.32     259.5    6182.1 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:15   48944.3      1.32     259.4    6182.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:15   48945.3      1.32     259.4    6182.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:15   48946.9      1.32     259.3    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48951.2      1.31     259.1    6188.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:16   48953.3      1.31     259.1    6188.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:16   48956.5      1.31     259.0    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48960.8      1.31     258.9    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48962.9      1.31     258.8    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48964.5      1.31     258.8    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48967.1      1.31     258.7    6188.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:16   48970.3      1.30     258.5    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48971.7      1.30     258.5    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:16   48979.6      1.30     258.4    6188.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:17   48981.8      1.30     258.3    6188.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:17   48986.3      1.30     258.2    6188.2 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:17   48998.5      1.30     258.1    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:17   49002.8      1.29     257.9    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:17   49007.6      1.29     257.8    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:17   49008.4      1.29     257.8    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:17   49013.7      1.28     257.5    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:17   49014.5      1.28     257.4    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:18   49014.5      1.28     257.4    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:18   49014.5      1.28     257.4    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49021.1      1.28     257.3    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49021.1      1.28     257.3    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49021.4      1.28     257.2    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49020.9      1.28     257.1    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:18   49020.9      1.28     257.1    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49021.1      1.28     257.1    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:18   49024.9      1.28     256.9    6221.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:18   49027.8      1.27     256.8    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:18   49029.1      1.27     256.8    6221.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:19   49039.2      1.27     256.7    6254.3 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:19   49043.7      1.27     256.6    6254.3 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:19   49043.2      1.27     256.6    6254.3 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:19   49053.9      1.27     256.5    6287.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:19   49054.9      1.27     256.5    6287.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:20   49054.9      1.27     256.5    6287.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:21   49052.0      1.27     256.4    6287.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:21   49052.5      1.27     256.4    6284.6                          
+    0:01:22   49053.9      1.27     256.9    6284.6                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:22   49053.9      1.27     256.9    6284.6                          
+    0:01:22   48904.9      1.27     256.3    5420.2 U4_ex/U1_alu/mult_104_2/net112820
+    0:01:23   48907.3      1.27     256.3    5420.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:23   48918.7      1.26     256.2    5427.9 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:23   48925.9      1.26     256.1    5427.9 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:23   48925.9      1.26     256.1    5427.9 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:23   48934.2      1.26     256.0    5427.9 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:24   48943.2      1.26     255.9    5434.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:24   48943.2      1.26     255.9    5434.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:24   48943.2      1.26     255.9    5434.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:25   48943.7      1.26     255.9    5434.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:26   48935.5      1.26     255.9    5420.2 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:26   48936.0      1.26     255.9    5420.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:27   48941.6      1.26     255.8    5420.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:27   48945.1      1.26     255.8    5420.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:27   48948.5      1.25     255.7    5420.1 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:28   48949.1      1.25     255.7    5420.1 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:28   48947.5      1.25     255.7    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:28   48953.0      1.25     255.6    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:28   48957.8      1.25     255.6    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:29   48957.8      1.25     255.6    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:29   48961.6      1.25     255.5    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:29   48965.8      1.25     255.5    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:30   48966.6      1.25     255.5    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:30   48971.4      1.25     255.5    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:30   48977.2      1.25     255.5    5420.0 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:30   48986.3      1.25     255.5    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:30   48986.3      1.25     255.5    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:31   48988.7      1.25     255.5    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:31   48988.7      1.25     255.5    5420.0 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:32   48989.0      1.25     255.4    5420.0                          
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:32   48989.0      1.25     255.4    5420.0                          
+    0:01:32   48989.5      1.25     255.4    5420.0                          
+    0:01:32   48994.5      1.25     255.3    5420.0                          
+    0:01:32   48999.1      1.25     255.3    5420.0                          
+    0:01:32   48999.3      1.24     255.2    5420.0                          
+    0:01:32   48999.3      1.24     255.2    5420.0                          
+    0:01:32   49002.3      1.24     255.2    5420.0                          
+    0:01:33   49004.4      1.24     255.1    5420.0                          
+    0:01:33   49006.0      1.24     255.1    5420.0                          
+    0:01:33   49014.2      1.24     255.1    5420.0                          
+    0:01:33   49016.6      1.24     255.0    5420.0                          
+    0:01:33   49022.7      1.24     255.0    5420.0                          
+    0:01:33   49023.0      1.24     255.0    5420.0                          
+    0:01:33   49023.5      1.24     254.9    5420.0                          
+    0:01:33   49027.5      1.24     254.9    5420.0                          
+    0:01:33   49029.4      1.24     254.8    5420.0                          
+    0:01:34   49029.4      1.24     254.8    5420.0                          
+    0:01:34   49027.8      1.24     254.8    5420.0                          
+    0:01:34   49024.6      1.24     254.7    5420.0                          
+    0:01:34   49026.5      1.24     254.7    5420.0                          
+    0:01:34   49028.1      1.24     254.7    5420.0                          
+    0:01:34   49028.3      1.24     254.7    5420.0                          
+    0:01:34   49031.2      1.24     254.6    5420.0                          
+    0:01:34   49031.5      1.24     254.6    5420.0                          
+    0:01:35   49031.8      1.24     254.6    5420.0                          
+    0:01:35   49032.0      1.24     254.6    5420.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:35   49032.0      1.24     254.6    5420.0                          
+    0:01:35   49032.0      1.24     254.6    5420.0                          
+    0:01:37   48774.0      1.24     254.6    5420.0                          
+    0:01:38   48685.4      1.24     254.6    5420.0                          
+    0:01:38   48628.3      1.24     254.4    5420.0                          
+    0:01:39   48590.8      1.24     254.5    5420.0                          
+    0:01:39   48557.8      1.24     254.5    5420.0                          
+    0:01:39   48530.9      1.24     254.5    5420.0                          
+    0:01:39   48508.8      1.25     254.7    5420.0                          
+    0:01:40   48490.7      1.25     254.9    5420.0                          
+    0:01:40   48479.8      1.26     255.0    5420.0                          
+    0:01:40   48466.0      1.26     255.1    5420.0                          
+    0:01:40   48466.0      1.26     255.1    5420.0                          
+    0:01:40   48466.0      1.26     255.1    5420.0                          
+    0:01:40   48377.7      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48372.6      1.26     253.6    5412.4                          
+    0:01:41   48375.3      1.25     253.4    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:42   48375.3      1.25     253.4    5412.4 U4_ex/EX_data_hilo_reg[63]/D
+    0:01:42   48380.9      1.25     253.3    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:42   48380.9      1.25     253.3    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:43   48380.9      1.25     253.2    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:43   48383.3      1.25     253.2    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:43   48383.8      1.25     253.1    5412.4 U4_ex/EX_data_hilo_reg[63]/D
+    0:01:44   48383.8      1.25     253.1    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:45   48383.8      1.24     253.1    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:45   48382.7      1.24     253.1    5412.4                          
+    0:01:45   48382.2      1.24     253.1    5412.4                          
+    0:01:45   48381.4      1.24     253.1    5412.4                          
+    0:01:45   48379.3      1.24     253.1    5412.4                          
+    0:01:45   48378.0      1.24     253.1    5412.4                          
+    0:01:45   48375.3      1.24     253.1    5412.4                          
+    0:01:45   48374.0      1.24     253.1    5412.4                          
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:45   48374.0      1.24     253.1    5412.4                          
+    0:01:46   48387.8      1.24     253.0    5412.4                          
+    0:01:46   48393.9      1.24     253.0    5412.4                          
+    0:01:46   48395.8      1.24     252.9    5412.4                          
+    0:01:46   48400.3      1.24     252.8    5412.4                          
+    0:01:46   48400.8      1.24     252.8    5412.4                          
+    0:01:47   48400.8      1.23     252.7    5412.4                          
+    0:01:47   48400.8      1.23     252.7    5412.4                          
+    0:01:47   48400.8      1.23     252.7    5412.4                          
+    0:01:47   48400.8      1.23     252.6    5412.4                          
+    0:01:47   48405.1      1.23     252.6    5412.4                          
+    0:01:47   48406.1      1.23     252.5    5412.4                          
+    0:01:47   48406.1      1.23     252.5    5412.4                          
+    0:01:47   48406.1      1.23     252.5    5412.4                          
+    0:01:48   48410.9      1.23     252.4    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:49   48412.5      1.23     252.4    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48413.6      1.23     252.4    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48418.1      1.23     252.3    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48419.2      1.23     252.3    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48421.8      1.23     252.3    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:49   48426.9      1.23     252.2    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48427.2      1.23     252.2    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:49   48427.2      1.22     252.2    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:49   48430.6      1.22     252.1    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:50   48434.3      1.22     252.0    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:50   48432.7      1.22     251.9    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:50   48433.8      1.22     251.9    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:50   48437.0      1.22     251.8    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:50   48437.8      1.22     251.8    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:50   48440.2      1.22     251.8    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:51   48442.6      1.22     251.7    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:51   48444.2      1.22     251.7    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:51   48444.2      1.22     251.7    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:51   48446.8      1.21     251.6    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:51   48447.6      1.21     251.6    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:51   48448.4      1.21     251.5    5412.4 U12_ex2/EX2_data_hilo_reg[63]/D
+    0:01:51   48450.3      1.21     251.5    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:52   48451.1      1.21     251.5    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:52   48453.8      1.21     251.4    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:52   48454.3      1.20     251.3    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:52   48456.7      1.20     251.3    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:52   48458.3      1.20     251.2    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:52   48458.8      1.20     251.2    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:52   48461.2      1.20     251.0    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:52   48461.5      1.20     251.0    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:53   48461.5      1.20     251.0    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:53   48461.5      1.20     251.0    5412.4 U4_ex/EX_data_hilo_reg[63]/D
+    0:01:53   48462.5      1.20     251.0    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:53   48462.5      1.20     251.0    5412.4 U4_ex/U1_alu/hilo_reg[63]/D
+    0:01:53   48462.5      1.20     251.0    5412.4 U12_ex2/U1_alu_2/hilo_reg[63]/D
+    0:01:54   48463.1      1.20     251.0    5412.4                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'minimips' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'U4_ex/U1_alu/clock': 1774 load(s), 1 driver(s)
+1
+# /* Save current design using synopsys format */
+write -hierarchy -format ddc -output "${GATE_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}.ddc"
+Writing ddc file '../out/final_minimips__nangate45.ddc'.
+1
+# /* Save current design using verilog format */
+change_names -hierarchy -rules verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+Warning: In the design pps_ei, net 'PF_pc[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei, net 'PF_pc[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_data_ual2[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_r_w' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_mem, net 'EX_r_w2' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr1[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr1[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr1[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr1[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr1[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr2[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr2[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr2[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr2[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr2[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr3[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr3[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr3[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr3[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr3[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr4[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr4[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr4[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr4[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'adr4[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr2[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr2[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr2[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr2[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_adr2[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design renvoi, net 'MEM_data2[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[31]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[30]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[29]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[28]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[27]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[26]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[25]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[24]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[23]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[22]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[21]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[20]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[19]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[18]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[17]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[16]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[14]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[13]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[12]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[11]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[10]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[9]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[8]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[7]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[6]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[5]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[4]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[3]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ei_2, net 'PF_pc[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in1' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in2' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in3' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in4' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in5' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in6' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in7' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in8' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in9' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in10' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in11' is connecting multiple ports. (UCN-1)
+Warning: In the design delay_gate, net 'in12' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_2_DW01_add_0, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_2_DW01_add_0, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_2_DW01_add_1, net 'A[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_2_DW01_add_1, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_2_DW01_add_1, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_DW01_add_0, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_DW01_add_0, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_DW01_add_1, net 'A[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_DW01_add_1, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_ex_DW01_add_1, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_0, net 'A[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_0, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_0, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_1, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_1, net 'A[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_2, net 'A[2]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_2, net 'A[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design pps_pf_DW01_add_2, net 'A[0]' is connecting multiple ports. (UCN-1)
+1
+write -hierarchy -format verilog -output "${GATE_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}.v"
+Writing verilog file '/home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/out/final_minimips__nangate45.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf -version 3.0 "${GATE_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}.sdf"
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/out/final_minimips__nangate45.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Warning: Design 'minimips' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+1
+write_sdc "${GATE_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}.sdc"
+1
+# write_test_protocol -output "${GATE_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}.spf"
+write_tmax_library -path "${GATE_PATH}"
+Current library: NangateOpenCellLibrary:
+Warning: Cannot convert FILLCELL_X32 to tlib format.
+Warning: Cannot convert FILLCELL_X16 to tlib format.
+Warning: Cannot convert FILLCELL_X8 to tlib format.
+Warning: Cannot convert FILLCELL_X4 to tlib format.
+Warning: Cannot convert FILLCELL_X2 to tlib format.
+Warning: Cannot convert FILLCELL_X1 to tlib format.
+Warning: Cannot convert ANTENNA_X1 to tlib format.
+Information: Wrote out tmax lib file(s)1
+# /* Basic reports */
+report_area                     > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_area.log"
+report_timing -nworst 10        > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_timing.log"
+report_hierarchy                > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_hierarchy.log"
+report_resources                > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_resources.log"
+report_reference                > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_reference.log"
+report_constraint               > "${LOG_PATH}${STAGE}_${TOPLEVEL}_${simType}_${TECH}_constraint.log"
+# report_ultra_optimizations      > "${LOG_PATH}${STAGE}_${TOPLEVEL}_ultra_optimizations_${simType}_${TECH}.log"
+# report_power                    > "${LOG_PATH}${STAGE}_${TOPLEVEL}_power_${simType}_${TECH}.log"
+# /* Verify design */
+if { $DO_VERIFY == "yes" } {
+	compile -no_map -verify		> "${LOG_PATH}verify_${TOPLEVEL}_${simType}_${TECH}.log"
+}
+# /* Finish */
+sh date
+Mon Mar  8 20:39:43 EET 2021
+exit
+
+Thank you...

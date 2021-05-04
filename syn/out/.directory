@@ -1,0 +1,8 @@
+[Dolphin]
+GroupedSorting=true
+HeaderColumnWidths=316,72,100,89,72,86
+SortRole=type
+Timestamp=2021,2,15,16,52,2
+Version=3
+ViewMode=1
+VisibleRoles=Details_text,Details_size,Details_date,Details_permissions,Details_owner,Details_group,CustomizedDetails

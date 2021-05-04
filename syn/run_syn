@@ -1,0 +1,4 @@
+#!/bin/sh -f
+
+dc_shell -f ../bin/top.tcl | tee ../log/top.log
+mv command.log ../log

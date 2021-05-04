@@ -1,0 +1,41 @@
+1	0000  20840000            addi $a0, $a0, 0       ; iteracao atual
+2	0004  20A50003            addi $a1, $a1, 3       ; numero maximo de iterações
+3	0008  8C0900B4            lw $t1, 180($zero)
+4	000C  8C0A00B8            lw $t2, 184($zero)
+5	0010  8C0B00BC            lw $t3, 188($zero)
+6	0014  8C0C00C0            lw $t4, 192($zero)
+7	                          loop:
+8	0018  012A7822            sub $t7, $t1, $t2
+9	001C  19E0FFDB            blez $t7, salto21
+10	0020  21500000            addi $s1, $t2, 0
+11	0024  21310000            addi $s2, $t1, 0
+12	0028  22090000            addi $t1, $s1, 0
+13	002C  222A0000            addi $t2, $s2, 0
+14	                          salto21:
+15	0030  014B7822            sub $t7, $t2, $t3
+16	0034  19E0FFE1            blez $t7, salto32
+17	0038  21710000            addi $s2, $t3, 0
+18	003C  21520000            addi $s3, $t2, 0
+19	0040  222A0000            addi $t2, $s2, 0
+20	0044  224B0000            addi $t3, $s3, 0
+21	                          salto32:
+22	0048  016C7822            sub $t7, $t3, $t4
+23	004C  19E0FFE7            blez $t7, salto43
+24	0050  21920000            addi $s3, $t4, 0
+25	0054  21730000            addi $s4, $t3, 0
+26	0058  224B0000            addi $t3, $s3, 0
+27	005C  226C0000            addi $t4, $s4, 0
+28	                          salto43:
+29	0060  20840001            addi $a0, $a0, 1
+30	0064  1485FFED            bne $a0, $a1, loop                           
+31	                          org 180
+32	00B4  00000002            dcw 2
+33	00B8  FFFFFFFF            dcw -1
+34	00BC  00000001            dcw 1
+35	00C0  00000000            dcw 0
+36	                          
+Table des étiquettes :
+salto43	0060
+salto32	0048
+salto21	0030
+loop	0018

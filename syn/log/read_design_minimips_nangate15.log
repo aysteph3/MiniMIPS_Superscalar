@@ -1,0 +1,100 @@
+Running PRESTO HDLC
+Compiling Package Declaration PACK_MIPS
+Presto compilation completed successfully.
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/dw_foundation.sldb'
+Running PRESTO HDLC
+Compiling Entity Declaration ALU
+Compiling Architecture RTL of ALU
+Warning:  ../src/alu.vhd:36: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration ALU2
+Compiling Architecture RTL of ALU2
+Warning:  ../src/alu2.vhd:36: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_PF
+Compiling Architecture RTL of PPS_PF
+Warning:  ../src/pps_pf.vhd:48: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration DELAY_GATE
+Compiling Architecture RTL of DELAY_GATE
+Warning:  ../src/delay_gate.vhd:50: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_DI
+Compiling Architecture RTL of PPS_DI
+Warning:  ../src/pps_di.vhd:66: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_DI_2
+Compiling Architecture RTL of PPS_DI_2
+Warning:  ../src/pps_di_2.vhd:66: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_EI
+Compiling Architecture RTL of PPS_EI
+Warning:  ../src/pps_ei.vhd:45: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_EI_2
+Compiling Architecture RTL of PPS_EI_2
+Warning:  ../src/pps_ei_2.vhd:45: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration RAM
+Compiling Architecture BENCH of RAM
+Warning:  ../src/ram.vhd:47: The architecture bench has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration ROM
+Compiling Architecture BENCH of ROM
+Warning:  ../src/rom.vhd:46: The architecture bench has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration RENVOI
+Compiling Architecture RTL of RENVOI
+Warning:  ../src/renvoi.vhd:111: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration SYSCOP
+Compiling Architecture RTL of SYSCOP
+Warning:  ../src/syscop.vhd:77: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_MEM
+Compiling Architecture RTL of PPS_MEM
+Warning:  ../src/pps_mem.vhd:96: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_EX
+Compiling Architecture RTL of PPS_EX
+Warning:  ../src/pps_ex.vhd:65: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration PPS_EX_2
+Compiling Architecture RTL of PPS_EX_2
+Warning:  ../src/pps_ex_2.vhd:66: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration BUS_CTRL01
+Compiling Architecture RTL of BUS_CTRL01
+Warning:  ../src/bus_ctrl01.vhd:53: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration BUS_CTRL02
+Compiling Architecture RTL of BUS_CTRL02
+Warning:  ../src/bus_ctrl02.vhd:53: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration BANC
+Compiling Architecture RTL of BANC
+Warning:  ../src/banc.vhd:59: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling Entity Declaration MINIMIPS
+Compiling Architecture RTL of MINIMIPS
+Warning:  ../src/minimips.vhd:44: The architecture rtl has already been analyzed. It is being replaced. (VHD-4)
+Presto compilation completed successfully.
+1

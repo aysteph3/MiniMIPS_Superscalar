@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : reference
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Mar  8 20:39:43 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI22_X1           NangateOpenCellLibrary
+                                  1.330000      64     85.120003  
+BUF_X1             NangateOpenCellLibrary
+                                  0.798000      18     14.364000  
+BUF_X2             NangateOpenCellLibrary
+                                  1.064000       1      1.064000  
+CLKBUF_X1          NangateOpenCellLibrary
+                                  0.798000      10      7.980000  
+DFF_X1             NangateOpenCellLibrary
+                                  4.522000       1      4.522000  n
+INV_X1             NangateOpenCellLibrary
+                                  0.532000      72     38.304000  
+NAND2_X1           NangateOpenCellLibrary
+                                  0.798000       4      3.192000  
+NOR2_X1            NangateOpenCellLibrary
+                                  0.798000       4      3.192000  
+NOR4_X1            NangateOpenCellLibrary
+                                  1.330000       2      2.660000  
+OR3_X1             NangateOpenCellLibrary
+                                  1.330000       2      2.660000  
+banc                          10862.641865       1  10862.641865  h, n
+bus_ctrl01                      439.165999       1    439.165999  h, n
+bus_ctrl02                      440.761999       1    440.761999  h, n
+delay_gate                        0.000000       1      0.000000  h
+pps_di                         1526.041976       1   1526.041976  h, n
+pps_di_2                       1543.065976       1   1543.065976  h, n
+pps_ei                          426.397993       1    426.397993  h, n
+pps_ei_2                        427.195993       1    427.195993  h, n
+pps_ex                        13492.849943       1  13492.849943  h, n
+pps_ex_2                      13501.627942       1  13501.627942  h, n
+pps_mem                        1580.571976       1   1580.571976  h, n
+pps_pf                          756.503991       1    756.503991  h, n
+renvoi                         1430.015993       1   1430.015993  h
+syscop                         1873.171993       1   1873.171993  h, n
+-----------------------------------------------------------------------------
+Total 24 references                                 48463.071641
+1

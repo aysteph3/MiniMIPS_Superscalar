@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Tue Mar  2 19:19:46 2021
+****************************************
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/lib/NanGate_15nm_OCL.db)
+
+Number of ports:                         7277
+Number of nets:                         45923
+Number of cells:                        34823
+Number of combinational cells:          31971
+Number of sequential cells:              2819
+Number of macros/black boxes:               0
+Number of buf/inv:                       6157
+Number of references:                      30
+
+Combinational area:              11766.055073
+Buf/Inv area:                     1640.693771
+Noncombinational area:           11880.380581
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 23646.435653
+Total area:                 undefined
+1

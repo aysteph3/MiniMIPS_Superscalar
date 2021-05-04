@@ -1,0 +1,112 @@
+MA =					MB =				       MR = MA x MB
+ 1    -2     3    -1     4    -2	-2     1    -1    -3    -5    -5       -32    13     1     2   -23   -14
+-4    -5    -4    -1    -2     0	 0    -1    -4    -5    -5     3	35   -14    38    46    78    24
+-1     4    -5     3    -4    -3	-3     3    -2     0    -5    -2	13    -5   -13    11    27    39
+ 1    -1    -1    -2    -5     0	-5     3    -4    -1    -3    -5	36    -7    18    24    36    19
+ 1     2    -1     2     4     4	-5     0    -1    -4    -5    -3       -17    -6   -19   -51   -44   -39
+-5    -5     3    -2    -3    -5	 3    -2     0    -5    -2    -5	11    13    30    79    66    48
+
+1	0000  21050018            addi $a1, $t0, 24
+2	0004  21070006            addi $a3, $t0, 6   ; numero maximo de iteracoes do for3
+3	                          for2:	                                               
+4	0008  23290000            addi $t1, $t9, 0
+5	000C  210F0000            addi $t7, $t0, 0                                            	
+6	                          for1:	
+7	0010  8D2A0144            lw $t2, 324($t1)   ; $t2 = MB posicao 0 (MB)
+8	0014  8D6C00B4            lw $t4, 180($t3)   ; $t4 = MA posicao 0 (MA)
+9	0018  21290018            addi $t1, $t1, 24  ; incrementa 24 em $t1, proximo nr. da coluna
+10	001C  216B0004            addi $t3, $t3, 4   ; incrementa 4 em $t3, proximo nr. da linha
+11	0020  014C701C            mult2 $t6, $t2, $t4; instrucao nova mult2 rd = rs * rt
+12	0024  01EE7820            add $t7, $t7, $t6  ; acumula valores em $t7
+13	0028  1565FFFA            bne $t3, $a1, for1 ; nr. para ser salvo obtido quando $t3=$a1                                         
+14	002C  AF0F0400      [44]  sw $t7, 1024($t8)  ; salva na posicao contida em $t8
+15	0030  23390004            addi $t9, $t9, 4   ; controle de MB[0,0]
+16	0034  20CB0000            addi $t3, $a2, 0   ; controle de linhas da MA		
+17	0038  23180004            addi $t8, $t8, 4   ; incrementa para proxima posicao p/salvar				
+18	003C  1705FFF3      [60]  bne $t8, $a1, for2 ; 6 posicoes da matriz C foram gravados  
+19	0040  20C60018            addi $a2, $a2, 24  ; endereco para proxima linha
+20	0044  20A50018      [68]  addi $a1, $a1, 24  ; incrementa em 24 para iniciar na proxima linha
+21	0048  20CB0000            addi $t3, $a2, 0   ; para ser multiplicada por todas colunas colocado em $t3
+22	004C  20840001            addi $a0, $a0, 1   ; controle de iteracoes do for3
+23	0050  21090000      [80]  addi $t1, $t0, 0   ; volta para MB[0,0]
+24	0054  21190000            addi $t9, $t0, 0
+25	0058  210F0000            addi $t7, $t0, 0
+26	005C  1487FFED      [92]  bne $a0, $a3, for1 ; $a0=$a3 fim!
+27
+28	                          org 180
+29	00B4  00000001            dcw 1
+30	00B8  FFFFFFFE            dcw -2
+31	00BC  00000003            dcw 3
+32	00C0  FFFFFFFF            dcw -1
+33	00C4  00000004            dcw 4
+34	00C8  FFFFFFFE            dcw -2
+35	00CC  FFFFFFFC            dcw -4
+36	00D0  FFFFFFFB            dcw -5
+37	00D4  FFFFFFFC            dcw -4
+38	00D8  FFFFFFFF            dcw -1
+39	00DC  FFFFFFFE            dcw -2
+40	00E0  00000000            dcw 0
+41	00E4  FFFFFFFF            dcw -1
+42	00E8  00000004            dcw 4
+43	00EC  FFFFFFFB            dcw -5
+44	00F0  00000003            dcw 3
+45	00F4  FFFFFFFC            dcw -4
+46	00F8  FFFFFFFD            dcw -3
+47	00FC  00000001            dcw 1
+48	0100  FFFFFFFF            dcw -1
+49	0104  FFFFFFFF            dcw -1
+50	0108  FFFFFFFE            dcw -2
+51	010C  FFFFFFFB            dcw -5
+52	0110  00000000            dcw 0
+53	0114  00000001            dcw 1
+54	0118  00000002            dcw 2
+55	011C  FFFFFFFF            dcw -1
+56	0120  00000002            dcw 2
+57	0124  00000004            dcw 4
+58	0128  00000004            dcw 4
+59	012C  FFFFFFFB            dcw -5
+60	0130  FFFFFFFB            dcw -5
+61	0134  00000003            dcw 3
+62	0138  FFFFFFFE            dcw -2
+63	013C  FFFFFFFD            dcw -3
+64	0140  FFFFFFFB            dcw -5
+65	0144  FFFFFFFE            dcw -2
+66	0148  00000001            dcw 1
+67	014C  FFFFFFFF            dcw -1
+68	0150  FFFFFFFD            dcw -3
+69	0154  FFFFFFFB            dcw -5
+70	0158  FFFFFFFB            dcw -5
+71	015C  00000000            dcw 0
+72	0160  FFFFFFFF            dcw -1
+73	0164  FFFFFFFC            dcw -4
+74	0168  FFFFFFFB            dcw -5
+75	016C  FFFFFFFB            dcw -5
+76	0170  00000003            dcw 3
+77	0174  FFFFFFFD            dcw -3
+78	0178  00000003            dcw 3
+79	017C  FFFFFFFE            dcw -2
+80	0180  00000000            dcw 0
+81	0184  FFFFFFFB            dcw -5
+82	0188  FFFFFFFE            dcw -2
+83	018C  FFFFFFFB            dcw -5
+84	0190  00000003            dcw 3
+85	0194  FFFFFFFC            dcw -4
+86	0198  FFFFFFFF            dcw -1
+87	019C  FFFFFFFD            dcw -3
+88	01A0  FFFFFFFB            dcw -5
+89	01A4  FFFFFFFB            dcw -5
+90	01A8  00000000            dcw 0
+91	01AC  FFFFFFFF            dcw -1
+92	01B0  FFFFFFFC            dcw -4
+93	01B4  FFFFFFFB            dcw -5
+94	01B8  FFFFFFFD            dcw -3
+95	01BC  00000003            dcw 3
+96	01C0  FFFFFFFE            dcw -2
+97	01C4  00000000            dcw 0
+98	01C8  FFFFFFFB            dcw -5
+99	01CC  FFFFFFFE            dcw -2
+100	01D0  FFFFFFFB            dcw -5
+101	                          
+Table des étiquettes :
+for1	0010
+for2	0008

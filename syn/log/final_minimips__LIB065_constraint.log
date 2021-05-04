@@ -1,0 +1,45 @@
+Error: Cannot read file 'CORE65GPSVT_nom_1.10V_25C.db'. (UID-58)
+ 
+****************************************
+Report : constraint
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:24 2021
+****************************************
+
+
+                                                   Weighted
+    Group (max_delay/setup)      Cost     Weight     Cost
+    -----------------------------------------------------
+    clock                        0.00      1.00      0.00
+    clock2                       0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    max_delay/setup                                  0.00
+
+                              Total Neg  Critical
+    Group (critical_range)      Slack    Endpoints   Cost
+    -----------------------------------------------------
+    clock                        0.00         0      0.00
+    clock2                       0.00         0      0.00
+    default                      0.00         0      0.00
+    -----------------------------------------------------
+    critical_range                                   0.00
+
+                                                   Weighted
+    Group (min_delay/hold)       Cost     Weight     Cost
+    -----------------------------------------------------
+    clock (no fix_hold)          0.00      1.00      0.00
+    clock2 (no fix_hold)         0.00      1.00      0.00
+    default                      0.00      1.00      0.00
+    -----------------------------------------------------
+    min_delay/hold                                   0.00
+
+
+    Constraint                                       Cost
+    -----------------------------------------------------
+    max_delay/setup                                  0.00 (MET)
+    critical_range                                   0.00 (MET)
+
+
+1

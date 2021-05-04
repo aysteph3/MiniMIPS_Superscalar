@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Mar  8 20:39:42 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/stephen/miniMIPS_superscalar/minimips_superscalar/syn/lib/NangateOpenCellLibrary.db)
+
+Number of ports:                         7277
+Number of nets:                         37632
+Number of cells:                        28477
+Number of combinational cells:          25623
+Number of sequential cells:              2821
+Number of macros/black boxes:               0
+Number of buf/inv:                       5699
+Number of references:                      24
+
+Combinational area:              36475.250067
+Buf/Inv area:                     3522.105987
+Noncombinational area:           11987.821574
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 48463.071641
+Total area:                 undefined
+1

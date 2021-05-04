@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : reference
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:24 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+**SEQGEN**                        0.000000       1      0.000000  n, u
+*SELECT_OP_2.32_2.1_32            0.000000       2      0.000000  s, u
+GTECH_BUF          gtech          0.000000       4      0.000000  u
+GTECH_NOT          gtech          0.000000       2      0.000000  u
+GTECH_OR2          gtech          0.000000      34      0.000000  u
+banc                              0.000000       1      0.000000  h, n, u
+bus_ctrl01                        0.000000       1      0.000000  h, n, u
+bus_ctrl02                        0.000000       1      0.000000  h, n, u
+delay_gate                        0.000000       1      0.000000  h
+pps_di                            0.000000       1      0.000000  h, n, u
+pps_di_2                          0.000000       1      0.000000  h, n, u
+pps_ei                            0.000000       1      0.000000  h, n, u
+pps_ei_2                          0.000000       1      0.000000  h, n, u
+pps_ex                            0.000000       1      0.000000  h, n, u
+pps_ex_2                          0.000000       1      0.000000  h, n, u
+pps_mem                           0.000000       1      0.000000  h, n, u
+pps_pf                            0.000000       1      0.000000  h, n, u
+renvoi                            0.000000       1      0.000000  h, u
+syscop                            0.000000       1      0.000000  h, n, u
+-----------------------------------------------------------------------------
+Total 19 references                                     0.000000
+1

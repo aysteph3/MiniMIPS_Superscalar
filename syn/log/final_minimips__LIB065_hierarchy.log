@@ -1,0 +1,234 @@
+ 
+****************************************
+Report : hierarchy
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:24 2021
+****************************************
+
+Information: This design contains unmapped logic. (RPT-7)
+
+Attributes:
+    r - licensed design
+
+minimips
+    GTECH_BUF                                gtech
+    GTECH_NOT                                gtech
+    GTECH_OR2                                gtech
+    banc
+        GTECH_AND2                           gtech
+        GTECH_AND4                           gtech
+        GTECH_AND5                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+    bus_ctrl01
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+    bus_ctrl02
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+    delay_gate
+    pps_di
+        GTECH_AND2                           gtech
+        GTECH_AND4                           gtech
+        GTECH_AND5                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+    pps_di_2
+        GTECH_AND2                           gtech
+        GTECH_AND4                           gtech
+        GTECH_AND5                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+    pps_ei
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+    pps_ei_2
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+    pps_ex
+        *ADD_UNS_OP_32_3_32
+            DW01_add_width32
+                GTECH_ADD_ABC                gtech
+        *ADD_UNS_OP_32_4_32
+            DW01_add_width32
+                GTECH_ADD_ABC                gtech
+        *ADD_UNS_OP_32_32_32
+            DW01_add_width32
+                GTECH_ADD_ABC                gtech
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+        alu
+            *ADD_UNS_OP_33_1_33
+                DW01_add_width33
+                    GTECH_ADD_ABC            gtech
+            *ADD_UNS_OP_33_33_33
+                DW01_add_width33
+                    GTECH_ADD_ABC            gtech
+            *ASHR_UNS_UNS_OP_32_5_32
+                DW_rightsh                             r
+                    GTECH_AND2               gtech
+                    GTECH_MUX2               gtech
+            *ASH_UNS_UNS_OP_32_5_32
+                DW_leftsh                              r
+                    GTECH_AND_NOT            gtech
+                    GTECH_MUX2               gtech
+            *EQ_UNS_OP_32_1_1
+                DW01_cmp6_width32
+                    GTECH_AND_NOT            gtech
+                    GTECH_NAND2              gtech
+                    GTECH_NOR2               gtech
+                    GTECH_NOT                gtech
+                    GTECH_OR_NOT             gtech
+                    GTECH_XNOR2              gtech
+                    GTECH_XOR2               gtech
+            *MULT_TC_OP_16_16_32
+                DW02_mult                              r
+                    GTECH_ADD_AB             gtech
+                    GTECH_ADD_ABC            gtech
+                    GTECH_AND2               gtech
+                    GTECH_BUF                gtech
+                    GTECH_NOR2               gtech
+                    GTECH_NOT                gtech
+                    GTECH_OR2                gtech
+                    GTECH_XNOR2              gtech
+                    GTECH_XOR2               gtech
+                    GTECH_XOR3               gtech
+            *MULT_TC_OP_32_32_64
+                DW02_mult                              r
+                    GTECH_ADD_AB             gtech
+                    GTECH_ADD_ABC            gtech
+                    GTECH_AND2               gtech
+                    GTECH_BUF                gtech
+                    GTECH_NOR2               gtech
+                    GTECH_NOT                gtech
+                    GTECH_OR2                gtech
+                    GTECH_XNOR2              gtech
+                    GTECH_XOR2               gtech
+                    GTECH_XOR3               gtech
+            *MULT_UNS_OP_32_32_64
+                DW02_mult                              r
+                    GTECH_ADD_AB             gtech
+                    GTECH_ADD_ABC            gtech
+                    GTECH_AND2               gtech
+                    GTECH_BUF                gtech
+                    GTECH_NOR2               gtech
+                    GTECH_NOT                gtech
+                    GTECH_OR2                gtech
+                    GTECH_XNOR2              gtech
+                    GTECH_XOR2               gtech
+                    GTECH_XOR3               gtech
+            GTECH_AND2                       gtech
+            GTECH_BUF                        gtech
+            GTECH_NOT                        gtech
+            GTECH_OR2                        gtech
+            GTECH_XOR2                       gtech
+    pps_ex_2
+        *ADD_UNS_OP_32_3_32
+            ...
+        *ADD_UNS_OP_32_4_32
+            ...
+        *ADD_UNS_OP_32_32_32
+            ...
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+        alu2
+            *ADD_UNS_OP_33_1_33
+                ...
+            *ADD_UNS_OP_33_33_33
+                ...
+            *ASHR_UNS_UNS_OP_32_5_32
+                ...
+            *ASH_UNS_UNS_OP_32_5_32
+                ...
+            *EQ_UNS_OP_32_1_1
+                ...
+            *MULT_TC_OP_16_16_32
+                ...
+            *MULT_TC_OP_32_32_64
+                ...
+            *MULT_UNS_OP_32_32_64
+                ...
+            GTECH_AND2                       gtech
+            GTECH_BUF                        gtech
+            GTECH_NOT                        gtech
+            GTECH_OR2                        gtech
+            GTECH_XOR2                       gtech
+    pps_mem
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+    pps_pf
+        *ADD_UNS_OP_32_3_32
+            ...
+        *ADD_UNS_OP_32_4_32
+            ...
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+    renvoi
+        *EQ_UNS_OP_6_6_1
+            DW01_cmp6_width6
+                GTECH_AND_NOT                gtech
+                GTECH_NAND2                  gtech
+                GTECH_NOR2                   gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        *GEQ_UNS_OP_3_3_1
+            DW01_cmp2_width3
+                GTECH_NAND2                  gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        GTECH_AND2                           gtech
+        GTECH_AND3                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+    syscop
+        *GEQ_UNS_OP_5_5_1
+            DW01_cmp2_width5
+                GTECH_NAND2                  gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        *GT_UNS_OP_5_5_1
+            DW01_cmp2_width5
+                GTECH_NAND2                  gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        *LEQ_UNS_OP_5_5_1
+            DW01_cmp2_width5
+                GTECH_NAND2                  gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        *LT_UNS_OP_5_5_1
+            DW01_cmp2_width5
+                GTECH_NAND2                  gtech
+                GTECH_NOT                    gtech
+                GTECH_OR_NOT                 gtech
+                GTECH_XNOR2                  gtech
+                GTECH_XOR2                   gtech
+        GTECH_AND2                           gtech
+        GTECH_BUF                            gtech
+        GTECH_NOT                            gtech
+        GTECH_OR2                            gtech
+1

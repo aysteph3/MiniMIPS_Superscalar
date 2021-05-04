@@ -1,0 +1,36 @@
+ 
+****************************************
+Report : area
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:23 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'minimips' contains 16 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Warning: Clock port 'clock2' is assigned input delay relative to clock 'clock'. (TIM-111)
+Library(s) Used:
+
+    gtech (File: /eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/gtech.db)
+
+Number of ports:                        11722
+Number of nets:                         66212
+Number of cells:                        39652
+Number of combinational cells:          35576
+Number of sequential cells:              3918
+Number of macros/black boxes:               0
+Number of buf/inv:                      13054
+Number of references:                      19
+
+Combinational area:                  0.000000
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                     0.000000
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+1

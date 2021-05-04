@@ -1,0 +1,792 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 10
+        -max_paths 10
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:24 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: dw_foundation.sldb
+Wire Load Model Mode: top
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_4_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_4_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_4_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_3_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_3_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_3_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_2_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_2_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_2_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_1_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_1_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_1_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_0_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_0_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_0_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_1_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/B_7/Z (GTECH_BUF)                         0.00       0.20 f
+  U9_bus_ctrl01/C456/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_1_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_1_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_0_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack (in)                                            0.00       0.20 r
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 r
+  U9_bus_ctrl01/I_32/Z (GTECH_NOT)                        0.00       0.20 f
+  U9_bus_ctrl01/B_7/Z (GTECH_BUF)                         0.00       0.20 f
+  U9_bus_ctrl01/C456/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_0_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_0_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_3_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack (in)                                            0.00       0.20 f
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 f
+  U9_bus_ctrl01/B_6/Z (GTECH_BUF)                         0.00       0.20 f
+  U9_bus_ctrl01/C456/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_3_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_3_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_1_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack (in)                                            0.00       0.20 f
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 f
+  U9_bus_ctrl01/B_6/Z (GTECH_BUF)                         0.00       0.20 f
+  U9_bus_ctrl01/C456/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_1_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_1_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack (input port clocked by clock)
+  Endpoint: U12_ex2/EX2_data_hilo_reg_0_
+            (rising edge-triggered flip-flop clocked by clock')
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack (in)                                            0.00       0.20 f
+  U9_bus_ctrl01/ack_from_ram (bus_ctrl01)                 0.00       0.20 f
+  U9_bus_ctrl01/B_6/Z (GTECH_BUF)                         0.00       0.20 f
+  U9_bus_ctrl01/C456/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C461/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/C463/Z_0 (*SELECT_OP_2.1_2.1_1)           0.00       0.20 f
+  U9_bus_ctrl01/stop_all (bus_ctrl01)                     0.00       0.20 f
+  U12_ex2/stop_all (pps_ex_2)                             0.00       0.20 f
+  U12_ex2/I_1/Z (GTECH_NOT)                               0.00       0.20 r
+  U12_ex2/C1481/Z_0 (*SELECT_OP_2.1_2.1_1)                0.00       0.20 r
+  U12_ex2/EX2_data_hilo_reg_0_/synch_enable (**SEQGEN**)
+                                                          0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock' (rise edge)                                2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U12_ex2/EX2_data_hilo_reg_0_/clocked_on (**SEQGEN**)
+                                                          0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_4_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_4_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_4_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_3_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_3_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_3_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_2_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_2_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_2_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_1_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_1_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_1_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_0_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_0_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_0_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_1_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/B_7/Z (GTECH_BUF)                        0.00       0.20 f
+  U13_bus_ctrl02/C458/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_1_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_1_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_0_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  ram_ack2 (in)                                           0.00       0.20 r
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 r
+  U13_bus_ctrl02/I_32/Z (GTECH_NOT)                       0.00       0.20 f
+  U13_bus_ctrl02/B_7/Z (GTECH_BUF)                        0.00       0.20 f
+  U13_bus_ctrl02/C458/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_0_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_0_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_2_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack2 (in)                                           0.00       0.20 f
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 f
+  U13_bus_ctrl02/B_6/Z (GTECH_BUF)                        0.00       0.20 f
+  U13_bus_ctrl02/C458/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_2_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_2_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_1_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack2 (in)                                           0.00       0.20 f
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 f
+  U13_bus_ctrl02/B_6/Z (GTECH_BUF)                        0.00       0.20 f
+  U13_bus_ctrl02/C458/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_1_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_1_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+  Startpoint: ram_ack2 (input port clocked by clock)
+  Endpoint: U1_pf/pc_interne4_reg_0_
+            (rising edge-triggered flip-flop clocked by clock2')
+  Path Group: clock2
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 f
+  ram_ack2 (in)                                           0.00       0.20 f
+  U13_bus_ctrl02/ack_from_ram (bus_ctrl02)                0.00       0.20 f
+  U13_bus_ctrl02/B_6/Z (GTECH_BUF)                        0.00       0.20 f
+  U13_bus_ctrl02/C458/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C463/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/C465/Z_0 (*SELECT_OP_2.1_2.1_1)          0.00       0.20 f
+  U13_bus_ctrl02/stop_all (bus_ctrl02)                    0.00       0.20 f
+  U1_pf/stop_all2 (pps_pf)                                0.00       0.20 f
+  U1_pf/B_10/Z (GTECH_BUF)                                0.00       0.20 f
+  U1_pf/C503/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 f
+  U1_pf/I_1/Z (GTECH_NOT)                                 0.00       0.20 r
+  U1_pf/C506/Z_0 (*SELECT_OP_2.1_2.1_1)                   0.00       0.20 r
+  U1_pf/pc_interne4_reg_0_/synch_enable (**SEQGEN**)      0.00       0.20 r
+  data arrival time                                                  0.20
+
+  clock clock2' (rise edge)                               2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  U1_pf/pc_interne4_reg_0_/clocked_on (**SEQGEN**)        0.00       2.40 r
+  library setup time                                      0.00       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -0.20
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.20
+
+
+1

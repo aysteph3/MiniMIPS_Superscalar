@@ -1,0 +1,391 @@
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/2017-18/RHELx86/SYN_2017.09-SP3/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Warning: Can't read link_library file 'CORE65GPSVT_nom_1.10V_25C.db'. (UID-3)
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 273 in file
+	'../src/minimips.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           273            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 276 in file
+	'../src/minimips.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           276            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine minimips line 281 in file
+		'../src/minimips.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   it_mat_clk_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'minimips'.
+Warning: Can't read link_library file 'CORE65GPSVT_nom_1.10V_25C.db'. (UID-3)
+Information: Building the design 'pps_pf'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pps_pf line 85 in file
+		'../src/pps_pf.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   pc_interne_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pps_pf line 98 in file
+		'../src/pps_pf.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   pc_interne4_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_ei'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pps_ei line 51 in file
+		'../src/pps_ei.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    EI_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    EI_instr_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EI_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_di'. (HDL-193)
+
+Statistics for case statements in always block at line 173 in file
+	'../src/pps_di.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           189            |    auto/auto     |
+|           251            |    auto/auto     |
+|           302            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine pps_di line 331 in file
+		'../src/pps_di.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    DI_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_bra_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_link_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_op1_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     DI_op2_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   DI_code_ual_reg   | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|    DI_offset_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| DI_adr_reg_dest_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   DI_ecr_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_mode_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    DI_op_mem_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_r_w_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  DI_exc_cause_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    DI_level_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_ex'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pps_ex line 106 in file
+		'../src/pps_ex.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ex_address_p1p2_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EX_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_bra_confirm_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   EX_data_ual_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   EX_adresse_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_adr_reg_dest_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   EX_ecr_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    EX_op_mem_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EX_r_w_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  EX_exc_cause_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    EX_level_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    EX_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  EX_data_hilo_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_adresse_p1p2_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_mem'. (HDL-193)
+
+Statistics for case statements in always block at line 105 in file
+	'../src/pps_mem.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           105            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 109 in file
+	'../src/pps_mem.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           109            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine pps_mem line 125 in file
+		'../src/pps_mem.vhd'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|    MEM_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     MEM_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| MEM_adr_reg_dest_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   MEM_ecr_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   MEM_data_ecr_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  MEM_exc_cause_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    MEM_level_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine pps_mem line 158 in file
+		'../src/pps_mem.vhd'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|    MEM_it_ok2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     MEM_adr2_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| MEM_adr_reg_dest2_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   MEM_ecr_reg2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   MEM_data_ecr2_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  MEM_exc_cause2_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    MEM_level2_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'renvoi'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'banc'. (HDL-193)
+
+Inferred memory devices in process
+	in routine banc line 89 in file
+		'../src/banc.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    registres_reg    | Flip-flop |  992  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'syscop'. (HDL-193)
+
+Statistics for case statements in always block at line 143 in file
+	'../src/syscop.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           162            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine syscop line 209 in file
+		'../src/syscop.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    save_msk_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     scp_reg_reg     | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    syscop/130    |   4    |   32    |      2       |
+|    syscop/132    |   4    |   32    |      2       |
+|    syscop/136    |   4    |   32    |      2       |
+|    syscop/138    |   4    |   32    |      2       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'bus_ctrl01'. (HDL-193)
+
+Statistics for case statements in always block at line 117 in file
+	'../src/bus_ctrl01.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           125            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine bus_ctrl01 line 78 in file
+		'../src/bus_ctrl01.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ei_buffer_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       cs_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine bus_ctrl01 line 95 in file
+		'../src/bus_ctrl01.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   req_allowed_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred tri-state devices in process
+	in routine bus_ctrl01 line 66 in file
+		'../src/bus_ctrl01.vhd'.
+=================================================
+|   Register Name    |       Type       | Width |
+=================================================
+| data_inout_ram_tri | Tri-State Buffer |  32   |
+=================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_ei_2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pps_ei_2 line 51 in file
+		'../src/pps_ei_2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    EI_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    EI_instr_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EI_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_di_2'. (HDL-193)
+
+Statistics for case statements in always block at line 174 in file
+	'../src/pps_di_2.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           190            |    auto/auto     |
+|           250            |    auto/auto     |
+|           301            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine pps_di_2 line 331 in file
+		'../src/pps_di_2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    DI_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_bra_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_link_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_op1_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     DI_op2_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   DI_code_ual_reg   | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|    DI_offset_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| DI_adr_reg_dest_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   DI_ecr_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_mode_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    DI_op_mem_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_r_w_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     DI_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  DI_exc_cause_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    DI_level_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pps_ex_2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pps_ex_2 line 108 in file
+		'../src/pps_ex_2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ex_address_p2p1_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EX_adr_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_bra_confirm_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   EX_data_ual_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   EX_adresse_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_adr_reg_dest_reg | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|   EX_ecr_reg_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    EX_op_mem_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EX_r_w_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  EX_exc_cause_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    EX_level_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    EX_it_ok_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  EX2_data_hilo_reg  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| EX_adresse_p2p1_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'bus_ctrl02'. (HDL-193)
+
+Statistics for case statements in always block at line 117 in file
+	'../src/bus_ctrl02.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           125            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine bus_ctrl02 line 78 in file
+		'../src/bus_ctrl02.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ei_buffer_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       cs_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine bus_ctrl02 line 95 in file
+		'../src/bus_ctrl02.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   req_allowed_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred tri-state devices in process
+	in routine bus_ctrl02 line 66 in file
+		'../src/bus_ctrl02.vhd'.
+=================================================
+|   Register Name    |       Type       | Width |
+=================================================
+| data_inout_ram_tri | Tri-State Buffer |  32   |
+=================================================
+Presto compilation completed successfully.
+Information: Building the design 'delay_gate'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+
+Inferred memory devices in process
+	in routine alu line 152 in file
+		'../src/alu.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     i_mult_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      hilo_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'alu2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine alu2 line 152 in file
+		'../src/alu2.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     i_mult_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      hilo_reg       | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1

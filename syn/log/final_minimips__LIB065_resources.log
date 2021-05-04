@@ -1,0 +1,14 @@
+ 
+****************************************
+Report : resources
+Design : minimips
+Version: N-2017.09-SP3
+Date   : Mon Feb 22 17:59:24 2021
+****************************************
+
+
+Resource sharing reports are created during the compile command,
+so the design must be compiled before resource sharing can be reported.
+
+No implementations to report
+1
